@@ -9,22 +9,22 @@ FROM mariadb:10-bionic
 # File Author / Maintainer
 MAINTAINER Sven Berger
 
-RUN apt-get update -qq && \
-    apt-get install -qy locales && \
+RUN apt update -qq && \
+    apt install -qy locales && \
     echo "Europe/Berlin" > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata && \
     echo "de_DE.UTF-8 UTF-8" >> /etc/locale.gen; locale-gen
 
-RUN apt-get install -qy build-essential \
+RUN apt install -qy build-essential \
 	mysql-common \
 	libmariadbclient-dev \
-	libmariadbclient18 \
-	zlib1g \
-	zlib1g-dev \
-	libcrypto++-dev \
-	libssl-dev \
-	python-mysqldb
-
+	libmariadbclient18
+# \	zlib1g \
+#	zlib1g-dev \
+#	libcrypto++-dev \
+#	libssl-dev \
+#	python-mysqldb
+#
 WORKDIR /tmp
 
 
@@ -36,16 +36,16 @@ RUN cd /tmp/epglv && \
 	make all && \
 	make install
 
-RUN	apt-get remove -qy build-essential \
+RUN	apt remove -qy build-essential \
 	libcrypto++-dev \
 	libssl-dev \
 	libmariadbclient-dev \
 	zlib1g-dev \
 	python-mysqldb
 
-RUN apt-get autoremove -qy && \
-    apt-get clean && \
-    apt-get purge && \
+RUN apt autoremove -qy && \
+    apt clean && \
+    apt purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 
