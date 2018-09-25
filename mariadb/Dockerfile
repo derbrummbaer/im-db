@@ -5,7 +5,7 @@
 
 FROM mariadb:10-bionic
 #FROM mariadb:10.3
-
+# ENV MARIADB_VERSION 1:10.3.9+maria~bionic
 # File Author / Maintainer
 MAINTAINER Sven Berger
 
@@ -15,7 +15,8 @@ RUN apt update -qq && \
     dpkg-reconfigure -f noninteractive tzdata && \
     echo "de_DE.UTF-8 UTF-8" >> /etc/locale.gen; locale-gen
 
-RUN apt install -qy \
+RUN set -ex; \
+	apt install -qy \
 	"libmariadbclient-dev=$MARIADB_VERSION" \
 	"libmariadbclient18=$MARIADB_VERSION"
 
