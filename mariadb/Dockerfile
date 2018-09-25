@@ -23,7 +23,7 @@ RUN apt-get install -qy build-essential \
 	zlib1g-dev \
 	libcrypto++-dev \
 	libssl-dev \
-	python-mysqldb -y
+	python-mysqldb
 
 WORKDIR /tmp
 
@@ -41,7 +41,7 @@ RUN	apt-get remove -qy build-essential \
 	libssl-dev \
 	libmariadbclient-dev \
 	zlib1g-dev \
-	python-mysqldb -y
+	python-mysqldb
 
 RUN apt-get autoremove -qy && \
     apt-get clean && \
