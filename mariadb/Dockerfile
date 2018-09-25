@@ -18,13 +18,13 @@ RUN apt update -qq && \
 RUN apt install -qy build-essential \
 	mysql-common \
 	libmariadbclient-dev \
-	libmariadbclient18 \
-	zlib1g
-#	zlib1g-dev \
-#	libcrypto++-dev \
-#	libssl-dev \
-#	python-mysqldb
-#
+	libmariadbclient \
+	zlib1g \
+	zlib1g-dev \
+	libcrypto++-dev \
+	libssl-dev \
+	python-mysqldb
+
 WORKDIR /tmp
 
 
