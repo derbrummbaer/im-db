@@ -5,7 +5,7 @@
 
 FROM mariadb:10-bionic
 #FROM mariadb:10.3
-# ENV MARIADB_VERSION 1:10.3.9+maria~bionic
+ENV MARIADB_VERSION 1:10.3.9+maria~bionic
 # File Author / Maintainer
 MAINTAINER Sven Berger
 
