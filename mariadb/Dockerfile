@@ -15,6 +15,10 @@ RUN apt update -qq && \
     dpkg-reconfigure -f noninteractive tzdata && \
     echo "de_DE.UTF-8 UTF-8" >> /etc/locale.gen; locale-gen
 
+RUN apt install -qy -t MariaDB \
+	libmariadbclient-dev \
+	libmariadbclient18
+
 RUN apt install -qy build-essential \
 	mysql-common \
 	libmariadbclient-dev \
@@ -24,7 +28,6 @@ RUN apt install -qy build-essential \
 	libssl-dev \
 	python-mysqldb
 
-#	libmariadbclient18 \
 WORKDIR /tmp
 
 
