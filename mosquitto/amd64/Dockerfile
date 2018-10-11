@@ -3,7 +3,7 @@
 # adminer
 ###########################################################
 
-FROM eclipse-mosquitto:latest
+FROM eclipse-mosquitto:1.4.12
 
 # File Author / Maintainer
 MAINTAINER Sven Berger

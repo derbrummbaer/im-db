@@ -3,7 +3,7 @@
 # mariadb
 ###########################################################
 
-FROM influxdb:1.6-alpine
+FROM influxdb:1.6.2-alpine
 
 # File Author / Maintainer
 MAINTAINER Sven Berger

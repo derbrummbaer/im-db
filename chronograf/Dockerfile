@@ -3,7 +3,7 @@
 # mariadb
 ###########################################################
 
-FROM chronograf:1.6-alpine
+FROM chronograf:1.6.2-alpine
 
 # File Author / Maintainer
 MAINTAINER Sven Berger

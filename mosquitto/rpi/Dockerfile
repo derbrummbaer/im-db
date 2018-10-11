@@ -3,7 +3,7 @@
 # adminer
 ###########################################################
 
-FROM adminer:4.6.3
+FROM robotany/mosquitto-rpi:latest
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
