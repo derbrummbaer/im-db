@@ -50,6 +50,7 @@ ENV PASSWD admin
 
 COPY scripte/entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh
+
 ############################################################
 ############################################################
 # USE CROSS-BUILD for Raspberry PI Images
@@ -61,3 +62,4 @@ RUN chmod +x entrypoint.sh
 ############################################################
 
 ENTRYPOINT [ "./entrypoint.sh" ]
+CMD ["/usr/sbin/mosquitto", "-c", "/mosquitto/config/mosquitto.conf"]
