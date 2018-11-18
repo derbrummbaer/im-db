@@ -45,6 +45,12 @@ ENV PASSWD admin
 ############################################################
 
 ############################################################
+# Start Config hinzufügen
+############################################################
+
+COPY config/mosquitto.conf /mosquitto.conf
+
+############################################################
 # Start Scipt hinzufügen
 ############################################################
 
@@ -62,4 +68,4 @@ RUN chmod +x entrypoint.sh
 ############################################################
 
 ENTRYPOINT [ "./entrypoint.sh" ]
-CMD ["/usr/sbin/mosquitto", "-c", "/mosquitto/config/mosquitto.conf"]
+CMD ["/usr/sbin/mosquitto", "-c", "/mosquitto.conf"]
