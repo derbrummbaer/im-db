@@ -1,7 +1,7 @@
 #!/bin/ash
 set -e
 
-
+echo "Version: 0.01"
 echo "Benutzername: " $USER
 echo "Password:     " $PASSWD
 
