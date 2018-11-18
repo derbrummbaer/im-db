@@ -17,6 +17,9 @@ MAINTAINER Sven Berger
 # Environment Variables
 ############################################################
 
+ENV USER admin
+ENV PASSWD admin
+
 ############################################################
 # Update Repository and upgrade Software
 ############################################################
@@ -42,9 +45,11 @@ MAINTAINER Sven Berger
 ############################################################
 
 ############################################################
-# Install gosu
+# Start Scipt hinzufügen
 ############################################################
 
+COPY scripte/entrypoint.sh /entrypoint.sh
+RUN chmod +x entrypoint.sh
 ############################################################
 ############################################################
 # USE CROSS-BUILD for Raspberry PI Images
@@ -54,3 +59,5 @@ MAINTAINER Sven Berger
 ############################################################
 # Container Start
 ############################################################
+
+ENTRYPOINT [ "./entrypoint.sh" ]
